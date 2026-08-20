@@ -84,3 +84,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ---------- Scroll-triggered process diagram draw-in ----------
+    var flowPaths = document.querySelectorAll('.flow-path');
+    var diagramEl = document.getElementById('processSvg');
+    if (diagramEl && flowPaths.length) {
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    flowPaths.forEach(function(p, i) { setTimeout(function() { p.classList.add('in-view'); }, i * 180); });
+                    io.disconnect();
+                }
+            });
+        }, { threshold: 0.3 });
+        io.observe(diagramEl);
+    }
+
+    // ---------- FAQ accordion ----------
+    document.querySelectorAll('.faq-item').forEach(function(item) {
+        var q = item.querySelector('.faq-q');
+        var a = item.querySelector('.faq-a');
+        q.addEventListener('click', function() {
+            var isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(function(other) {
+                if (other !== item) {
+                    other.classList.remove('open');
+                    other.querySelector('.faq-a').style.maxHeight = null;
+                }
+            });
+            if (isOpen) {
+                item.classList.remove('open');
+                a.style.maxHeight = null;
+            } else {
+                item.classList.add('open');
+                a.style.maxHeight = a.scrollHeight + 'px';
+            }
+        });
+    });
+
