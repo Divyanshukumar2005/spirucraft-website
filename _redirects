@@ -1,0 +1,20 @@
+# 301 redirects: OLD (real, confirmed) URLs -> NEW clean SEO-friendly URLs
+# Format: <old-path> <new-path> <status-code>
+# (No domain needed here - Cloudflare applies this per-site automatically)
+
+/about-us.htm                       /about-us/                                301
+/contact                            /contact-us/                              301
+/contact-us.htm                     /contact-us/                              301
+/products.htm                       /products/                                301
+/organic-spirulina-powder.htm       /products/organic-spirulina-powder/       301
+/phycocyanin-pigment-powder.htm     /products/phycocyanin-pigment-powder/     301
+/dried-spirulina-powder.htm         /products/dried-spirulina-powder/         301
+
+# Also redirect the .html versions from the interim deploy (in case Google indexed those too)
+/about.html                         /about-us/                                301
+/contact.html                       /contact-us/                              301
+/products.html                      /products/                                301
+/product-organic-spirulina.html     /products/organic-spirulina-powder/       301
+/product-phycocyanin.html           /products/phycocyanin-pigment-powder/     301
+/product-dried-spirulina.html       /products/dried-spirulina-powder/         301
+/index.htm                          /                                          301
