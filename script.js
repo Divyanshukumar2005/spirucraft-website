@@ -50,3 +50,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ---------- Inline contact-page form (submits straight to WhatsApp) ----------
+    var pageForm = document.getElementById('pageEnquiryForm');
+    if (pageForm) {
+        pageForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('pfName').value.trim();
+            var phone = document.getElementById('pfPhone').value.trim();
+            var qty = document.getElementById('pfQty').value.trim();
+            var message = document.getElementById('pfMessage').value.trim();
+            openWA('General Enquiry', name, phone, qty, message);
+        });
+    }
+
+    // ---------- Mobile menu ----------
+    var mm = document.getElementById('mobileMenu');
+    var hamburgerBtn = document.getElementById('hamburgerBtn');
+    var mmClose = document.getElementById('mmClose');
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', function() {
+        mm.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+    if (mmClose) mmClose.addEventListener('click', function() {
+        mm.classList.remove('open');
+        document.body.style.overflow = '';
+    });
+    if (mm) {
+        mm.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('click', function() {
+                mm.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
