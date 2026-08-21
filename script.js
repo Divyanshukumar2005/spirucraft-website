@@ -121,3 +121,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // ---------- Product filter tabs (products.html) ----------
+    var tabs = document.querySelectorAll('.filter-tab');
+    var cards = document.querySelectorAll('[data-category]');
+
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            tabs.forEach(function(t) {
+                t.classList.remove('active');
+            });
+
+            tab.classList.add('active');
+            var cat = tab.getAttribute('data-filter');
+
+            cards.forEach(function(card) {
+                var categories = card.getAttribute('data-category').split(' ');
+                var show = cat === 'all' || categories.includes(cat);
+                card.style.display = show ? '' : 'none';
+            });
+        });
+    });
+
+    // ---------- Reveal-on-scroll for generic elements ----------
+    var revealEls = document.querySelectorAll('.reveal');
+    if (revealEls.length) {
+        var rio = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    rio.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        revealEls.forEach(function(el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(16px)';
+            el.style.transition = 'opacity .6s ease, transform .6s ease';
+            rio.observe(el);
+        });
+    }
+});
