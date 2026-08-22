@@ -37,3 +37,16 @@ A fully static, hand-built multi-page site — no build tools, no frameworks, no
 - Downloadable company brochure (`brochure.pdf`)
 - SEO basics: sitemap, robots.txt, meta descriptions
 - Cloudflare Pages `_redirects` file mapping legacy URLs to the current clean URL structure
+## 🚀 Running Locally
+
+No build step needed — it's plain HTML/CSS/JS. Just serve the folder:
+
+```bash
+# Option 1: Python
+python3 -m http.server 8000
+
+# Option 2: Node (via npx)
+npx serve .
+```
+
+Then open `http://localhost:8000` in your browser.
