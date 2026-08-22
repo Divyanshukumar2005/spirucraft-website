@@ -53,3 +53,6 @@ Then open `http://localhost:8000` in your browser.
 ## 🛠️ Deployment
 
 This site is built for **Cloudflare Pages** (see `_redirects` for the redirect rules), but since it's fully static it can be deployed as-is to any static host — Netlify, Vercel, GitHub Pages, or a plain VPS/Nginx setup.
+## 📬 Enquiries
+
+All "Enquire" / "Get Quote" / contact form actions open a pre-filled WhatsApp chat via `script.js` (no server involved — the WhatsApp number is set client-side). There is no exposed API key or backend secret anywhere in this repo.
