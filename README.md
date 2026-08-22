@@ -28,3 +28,12 @@ A fully static, hand-built multi-page site — no build tools, no frameworks, no
 └── facility-*.jpg, product-*.jpg, plant-layout.jpg, rooted-in-telangana.jpg
                                                    # Facility and product photography
 ```
+
+## ✨ Features
+
+- Fully responsive, multi-page static site with clean SEO-friendly URLs (`/about-us/`, `/products/organic-spirulina-powder/`, etc.)
+- Product pages for each Spirucraft product line: Organic Spirulina Powder, Phycocyanin Pigment Powder, and Dried Spirulina Powder
+- Enquiry flow that opens a pre-filled **WhatsApp chat** — no backend or database required
+- Downloadable company brochure (`brochure.pdf`)
+- SEO basics: sitemap, robots.txt, meta descriptions
+- Cloudflare Pages `_redirects` file mapping legacy URLs to the current clean URL structure
