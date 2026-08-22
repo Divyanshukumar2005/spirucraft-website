@@ -56,3 +56,6 @@ This site is built for **Cloudflare Pages** (see `_redirects` for the redirect r
 ## 📬 Enquiries
 
 All "Enquire" / "Get Quote" / contact form actions open a pre-filled WhatsApp chat via `script.js` (no server involved — the WhatsApp number is set client-side). There is no exposed API key or backend secret anywhere in this repo.
+## 📄 License
+
+All rights reserved © Spirucraft. This code is provided for reference/portfolio purposes; please don't reuse the branding, product photography, or copy without permission.
