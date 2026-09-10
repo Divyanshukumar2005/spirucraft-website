@@ -1,8 +1,17 @@
 # Spirucraft — Website
 
+[![Live Site](https://img.shields.io/badge/Live-spirucraft.in-2ecc71.svg)](https://spirucraft.in)
+[![Status](https://img.shields.io/badge/Status-Production-brightgreen.svg)](https://spirucraft.in)
+
 Official marketing/product website for **Spirucraft** — Manufacturer, Exporter and Supplier of Organic Spirulina Powder and Phycocyanin Pigment Powder, based in Medak, Telangana.
 
 A fully static, hand-built multi-page site — no build tools, no frameworks, no backend. Just clean HTML, CSS, and vanilla JavaScript.
+
+## 🌐 Live Site
+
+This is a real, deployed production website, not a demo: **[spirucraft.in](https://spirucraft.in)**
+
+It's actively used by a real business to generate enquiries — every "Enquire" / "Get Quote" action on the live site opens a real WhatsApp conversation with the company.
 
 ## 📁 Project Structure
 
