@@ -1,44 +1,45 @@
+<div align="center">
+
 # Spirucraft — Website
 
-[![Live Site](https://img.shields.io/badge/Live-spirucraft.in-2ecc71.svg)](https://spirucraft.in)
-[![Status](https://img.shields.io/badge/Status-Production-brightgreen.svg)](https://spirucraft.in)
+Official marketing/product website for **Spirucraft**, a manufacturer, exporter and supplier of organic Spirulina powder and Phycocyanin pigment powder based in Medak, Telangana. A fully static, hand-built multi-page site — no build tools, no frameworks, no backend.
 
-Official marketing/product website for **Spirucraft** — Manufacturer, Exporter and Supplier of Organic Spirulina Powder and Phycocyanin Pigment Powder, based in Medak, Telangana.
+![HTML/CSS/JS](https://img.shields.io/badge/Frontend-HTML%20%2F%20CSS%20%2F%20Vanilla%20JS-orange)
+![Live Site](https://img.shields.io/badge/Live-spirucraft.in-2ecc71)
+![Status](https://img.shields.io/badge/Status-Production-brightgreen)
 
-A fully static, hand-built multi-page site — no build tools, no frameworks, no backend. Just clean HTML, CSS, and vanilla JavaScript.
+</div>
 
-## 🌐 Live Site
+---
 
-This is a real, deployed production website, not a demo: **[spirucraft.in](https://spirucraft.in)**
+## Contents
 
-It's actively used by a real business to generate enquiries — every "Enquire" / "Get Quote" action on the live site opens a real WhatsApp conversation with the company.
+- [Why](#why)
+- [How it works](#how-it-works)
+- [What's on the site](#whats-on-the-site)
+- [Running it locally](#running-it-locally)
+- [Deployment](#deployment)
+- [What I'd add next](#what-id-add-next)
+- [License](#license)
 
-## 📁 Project Structure
+> **Want a website like this for your own business?** If you're looking to hire a team to design and build one, [click here](https://gignova.co.in) to get in touch.
 
-```
-.
-├── index.html                                  # Home page
-├── about-us/
-│   └── index.html                               # About page
-├── contact-us/
-│   └── index.html                               # Contact page
-├── products/
-│   ├── index.html                               # Products overview
-│   ├── organic-spirulina-powder/index.html
-│   ├── phycocyanin-pigment-powder/index.html
-│   └── dried-spirulina-powder/index.html
-├── style.css                                    # All site styling
-├── script.js                                    # Site interactivity (WhatsApp enquiry, modals, forms)
-├── sitemap.xml                                  # SEO sitemap
-├── robots.txt                                   # Crawler rules
-├── _redirects                                   # Cloudflare Pages 301 redirects (old → new clean URLs)
-├── brochure.pdf                                 # Downloadable company/product brochure
-├── logo.png / wordmark.png                      # Brand assets
-└── facility-*.jpg, product-*.jpg, plant-layout.jpg, rooted-in-telangana.jpg
-                                                   # Facility and product photography
-```
+## Why
 
-## 📸 Screenshots
+Spirucraft sells in bulk, mainly to nutraceutical, food, feed and pharmaceutical buyers — this isn't a shopping-cart business, it's a "call us and negotiate a quote" business. So instead of building e-commerce infrastructure nobody needs, the whole enquiry funnel is designed around what actually converts a B2B buyer: a clean, SEO-crawlable product page per product line, a downloadable brochure/COA for procurement teams to forward internally, and a one-tap **WhatsApp enquiry** button instead of a contact form that sits in an inbox for days.
+
+Being an exporter also means search visibility matters more than flashy interactivity — a buyer in another state or country is going to *search* for "organic spirulina powder manufacturer India" before they ever hear the brand name. That's why the site is a set of separate, clean-URL pages (`/products/organic-spirulina-powder/`, `/products/phycocyanin-pigment-powder/`, etc.) rather than one single-page app — each product gets its own indexable page instead of being buried behind JavaScript routing.
+
+## How it works
+
+It's plain static HTML/CSS/JS, deployed on Cloudflare Pages:
+
+- Each product line (`organic-spirulina-powder`, `phycocyanin-pigment-powder`, `dried-spirulina-powder`) is its own folder with its own `index.html`, giving it a clean URL and its own SEO metadata rather than living behind a query string.
+- `_redirects` maps any older/legacy URLs to this current structure with 301s, so nothing breaks for anyone who bookmarked or linked an old page.
+- `script.js` handles the "Enquire" / "Get Quote" buttons — they build a pre-filled WhatsApp message client-side and open a chat directly with the company, with no server or database in between.
+- `sitemap.xml` and `robots.txt` cover the SEO basics so search engines can actually find and index every product page.
+
+## What's on the site
 
 | | |
 |---|---|
@@ -61,37 +62,34 @@ It's actively used by a real business to generate enquiries — every "Enquire" 
 | **Contact — FAQ** | |
 | ![Contact FAQ](docs/screenshots/17-contact-faq.png) | |
 
-## ✨ Features
+This is a real, deployed production website, not a demo — it's actively used by the business to generate enquiries: every "Enquire" / "Get Quote" click on the live site opens a real WhatsApp conversation with the company.
 
-- Fully responsive, multi-page static site with clean SEO-friendly URLs (`/about-us/`, `/products/organic-spirulina-powder/`, etc.)
-- Product pages for each Spirucraft product line: Organic Spirulina Powder, Phycocyanin Pigment Powder, and Dried Spirulina Powder
-- Enquiry flow that opens a pre-filled **WhatsApp chat** — no backend or database required
-- Downloadable company brochure (`brochure.pdf`)
-- SEO basics: sitemap, robots.txt, meta descriptions
-- Cloudflare Pages `_redirects` file mapping legacy URLs to the current clean URL structure
+## Running it locally
 
-## 🚀 Running Locally
-
-No build step needed — it's plain HTML/CSS/JS. Just serve the folder:
+No build step needed — it's plain HTML/CSS/JS:
 
 ```bash
-# Option 1: Python
 python3 -m http.server 8000
-
-# Option 2: Node (via npx)
-npx serve .
+# or: npx serve .
 ```
 
-Then open `http://localhost:8000` in your browser.
+Then open `http://localhost:8000`.
 
-## 🛠️ Deployment
+## Deployment
 
-This site is built for **Cloudflare Pages** (see `_redirects` for the redirect rules), but since it's fully static it can be deployed as-is to any static host — Netlify, Vercel, GitHub Pages, or a plain VPS/Nginx setup.
+Built for **Cloudflare Pages** (see `_redirects` for the redirect rules), but since it's fully static it deploys as-is to any static host — Netlify, Vercel, GitHub Pages, or a plain VPS/Nginx setup.
 
-## 📬 Enquiries
+## What I'd add next
 
-All "Enquire" / "Get Quote" / contact form actions open a pre-filled WhatsApp chat via `script.js` (no server involved — the WhatsApp number is set client-side). There is no exposed API key or backend secret anywhere in this repo.
+- Add a proper structured enquiry/quote-request form (product, quantity, destination country) as an alternative to WhatsApp — some overseas procurement teams prefer email/form trails over WhatsApp for compliance reasons
+- Add a certifications/documentation page linking directly to COA and quality certificates, instead of only mentioning them in the About page copy
+- Basic multi-language support, since a meaningful share of enquiries for an exporter come from outside India
+- Swap the single shared `og-image.jpg` for a per-product Open Graph image, so sharing a specific product link looks right on social/WhatsApp previews instead of showing the generic homepage image
 
-## 📄 License
+## License
 
-All rights reserved © Spirucraft. This code is provided for reference/portfolio purposes; please don't reuse the branding, product photography, or copy without permission.
+<div align="center">
+
+All rights reserved © Spirucraft. Provided for reference/portfolio purposes — please don't reuse the branding, product photography, or copy without permission.
+
+</div>
